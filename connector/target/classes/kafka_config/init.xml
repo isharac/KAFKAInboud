@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="init">
+
+	<parameter name="brokerlist" />
+	<parameter name="serializationclass" />
+	<parameter name="requiredacks" />
+	<parameter name="producertype" />
+	<parameter name="keyserializerclass" />
+	<parameter name="partitionerclass" />
+	<parameter name="compressioncodec" />
+	<parameter name="compressedtopics" />
+	<parameter name="messagesendmaxretries" />
+	<parameter name="retrybackoff" />
+	<parameter name="refreshinterval" />
+	<parameter name="bufferingmaxmessages" />
+	<parameter name="batchnomessages" />
+	<parameter name="sendbuffersize" />
+
+	<sequence>
+		<log>
+			
+	<property name="brokerList" expression="$func:brokerlist" />
+	<property name="serializationClass" expression="$func:serializationclass" />
+	<property name="requiredAcks" expression="$func:requiredacks" />
+
+	<property name="producertype" expression="$func:producertype" />
+
+
+	<property name="keyserializerclass" expression="$func:keyserializerclass" />
+	<property name="partitionerclass" expression="$func:partitionerclass" />
+
+	<property name="compressioncodec" expression="$func:compressioncodec" />
+	<property name="compressedtopics" expression="$func:compressedtopics" />
+
+
+	<property name="messagesendmaxretries" expression="$func:messagesendmaxretries" />
+
+	<property name="retrybackoff" expression="$func:retrybackoff" />
+	<property name="refreshinterval" expression="$func:refreshinterval" />
+	<property name="bufferingmaxmessages" expression="$func:bufferingmaxmessages" />
+
+
+	<property name="batchnomessages" expression="$func:batchnomessages" />
+	<property name="sendbuffersize" expression="$func:sendbuffersize" />
+
+
+		</log>
+		<property expression="$func:brokerlist" name="kafka.brokerlist"
+			scope="operation" type="STRING" />
+		<property expression="$func:serializationclass" name="kafka.serializationClass"
+			scope="operation" type="STRING" />
+		<property expression="$func:requiredacks" name="kafka.requiredAcks"
+			scope="operation" type="STRING" />
+
+		<property expression="$func:producertype" name="kafka.producertype"
+			scope="operation" type="STRING" />
+
+
+		<property expression="$func:keyserializerclass" name="kafka.keyserializerclass"
+			scope="operation" type="STRING" />
+		<property expression="$func:partitionerclass" name="kafka.partitionerclass"
+			scope="operation" type="STRING" />
+
+
+		<property expression="$func:compressioncodec" name="kafka.compressioncodec"
+			scope="operation" type="STRING" />
+
+		<property expression="$func:compressedtopics" name="kafka.compressedtopics"
+			scope="operation" type="STRING" />
+
+
+		<property expression="$func:messagesendmaxretries" name="kafka.messagesendmaxretries"
+			scope="operation" type="STRING" />
+
+
+		<property expression="$func:retrybackoff" name="kafka.retrybackoff"
+			scope="operation" type="STRING" />
+		<property expression="$func:refreshinterval" name="kafka.refreshinterval"
+			scope="operation" type="STRING" />
+		<property expression="$func:bufferingmaxmessages" name="kafka.bufferingmaxmessages"
+			scope="operation" type="STRING" />
+
+
+		<property expression="$func:batchnomessages" name="kafka.batchnomessages"
+			scope="operation" type="STRING" />
+		<property expression="$func:sendbuffersize" name="kafka.sendbuffersize"
+			scope="operation" type="STRING" />
+
+
+
+
+		<class name="org.wso2.carbon.connector.KafkaConfig" />
+	</sequence>
+</template>

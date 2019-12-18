@@ -1,0 +1,20 @@
+<template xmlns="http://ws.apache.org/ns/synapse" name="kafkaproduce-operation">
+	<parameter name="topic" />
+	<parameter name="message" />
+	<parameter name="key" />
+	<parameter name="contentType" />
+	
+	<sequence>
+		<log level="full">
+			
+			<property name="topic" expression="$func:topic" />
+			<property name="message" expression="$func:message" />
+			<property name="key" expression="$func:key" />
+			<property name="contentType" expression="$func:contentType" />
+	
+		</log>
+		
+		<property expression="$func:message" name="kafka.message" scope="operation" type="STRING"/>
+		    <class name="org.wso2.carbon.connector.KafkaProduce" />
+	</sequence>
+</template>

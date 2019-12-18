@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="kafka_produce" type="synapse/template" >
+    <subComponents>
+        <component name="kafkaproduce-operation">
+            <file>kafkaProduce-template.xml</file>
+            <description>Send messages to kafka brokers</description>
+        </component>
+    </subComponents>
+</component>
