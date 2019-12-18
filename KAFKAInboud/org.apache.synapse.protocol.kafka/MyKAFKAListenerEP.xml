@@ -1,0 +1,25 @@
+<inboundEndpoint xmlns="http://ws.apache.org/ns/synapse" name="MyKAFKAListenerEP"
+                 protocol="kafka"
+                 interval="1000" suspend="false"
+sequence ="requestHandlerSeq" onError="inFaulte">
+ <parameters>
+<parameter name="zookeeper.connect">localhost:2181</parameter>
+<parameter name="group.id">test-group</parameter>
+<parameter name="zookeeper.session.timeout.ms">500</parameter>
+<parameter name="zookeeper.sync.time.ms">250</parameter>
+<parameter name="auto.commit.interval.ms">1000</parameter>
+<parameter name="auto.offset.reset">smallest</parameter>
+<parameter name="thread.count">1</parameter>
+ <!--parameter name="topics">test2</parameter-->
+<parameter name="content.type">application/json</parameter>
+<parameter name="topic.filter">test</parameter>
+<parameter name="filter.from.whitelist">false</parameter>
+<parameter name="consumer.type">highlevel</parameter>
+<parameter name="simple.max.messages.to.read">5</parameter>
+<parameter name="simple.topic">test</parameter>
+<parameter name="simple.brokers">localhost</parameter>
+<parameter name="simple.port">9092</parameter>
+<parameter name="simple.partition">1</parameter>
+</parameters>
+<!-- <sequence key="requestHandlerSeq" onError="inFalte"/>-->
+</inboundEndpoint>   
